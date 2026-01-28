@@ -1,9 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import heroBg from '../assets/new-hero.webp';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
-  const backgroundImage = "https://lh3.googleusercontent.com/aida-public/AB6AXuA6KvtGI3qvT65X5ggQmX1pIRE_28nkbML2o-SRi1bHvSHkO6HovylHoua36plmUOkyLkwqDqG30HAk5RKYqSo9BCzujUERzqLBKUjqM5Iq6L2vBwAIM5BBUk7rm01BKt9hoYPPh57p0zTz4377NRxr6KGUF8T33JUeva11eygaW9QVwUfDiIZhd_4Op5sbDGTMI4cd8vvXmGWP-Jw6J-ZaZIh51y7MJl0SFO6nUam_pIdLevXIllCuxlJH0Hvz_fyJ4dNyKw-ZbD4k";
+  const backgroundImage = heroBg;
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');

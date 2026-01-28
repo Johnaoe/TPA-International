@@ -1,6 +1,7 @@
 import React from 'react';
 import { Users, Lightbulb, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import aboutImage from '../assets/hero-bg.webp';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
@@ -20,7 +21,7 @@ const About: React.FC = () => {
           </div>
           <div className="md:w-1/2">
              <img 
-               src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+               src={aboutImage}
                alt="Community gathering" 
                className="rounded-2xl shadow-lg w-full h-80 object-cover"
              />
