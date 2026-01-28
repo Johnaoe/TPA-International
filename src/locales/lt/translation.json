@@ -1,0 +1,92 @@
+{
+  "header": {
+    "title": "Tarptautiniai Projektai",
+    "home": "Pradžia",
+    "about": "Apie mus",
+    "projects": "Projektai",
+    "contact": "Kontaktai"
+  },
+  "hero": {
+    "title": "SUJUNGIAME KARTAS",
+    "description": "Stipriname bendruomenes per kartų dialogą, sveikus įpročius ir tvarų gyvenimo būdą. Junkis prie mūsų misijos kurti sveikesnes ir glaudesnes bendruomenes.",
+    "cta": "Sužinok daugiau"
+  },
+  "about": {
+    "title": "DAUGIAU NEI TIK PROJEKTAI",
+    "description": "Tarptautinių Projektų Asociacija (TPA) jungia skirtingas kartas per inovatyvias programas, orientuotas į sveiką gyvenimo būdą, kultūrinį bendravimą ir bendruomenės stiprinimą. Tikime dalijimosi išmintimi ir kartų bendradarbiavimo galia.",
+    "impact_title": "ŠIMTAI ŽMONIŲ KURIA NAUJUS RYŠIUS",
+    "stat1_title": "Praktinių Įgūdžių Ugdymas",
+    "stat1_desc": "Kuriame unikalias erdves, kur skirtingų kartų žmonės gali susitikti, dalintis patirtimi ir kartu mokytis vieni iš kitų.",
+    "stat2_title": "Kūrybinis Mokymasis",
+    "stat2_desc": "Praktinis mokymasis per įvairias veiklas - nuo sporto varžybų iki tradicinių amatų dirbtuvių.",
+    "stat3_title": "Bendruomenės Stiprinimas",
+    "stat3_desc": "Sujungiame jaunus žmones su vyresniais bendruomenės nariais, kurdami galimybes abipusiam mokymuisi."
+  },
+  "initiatives": {
+    "title": "Mūsų Projektai",
+    "cta_read_more": "Sužinok daugiau",
+    "items": {
+      "1": {
+        "title": "Tradicinių Patiekalų Gaminimo Dirbtuvės",
+        "description": "Išmokite karaimų kulinarijos paslapčių iš patyrusių virtuvės šefų ir perduokite šias žinias jaunajai kartai.",
+        "fullDescription": "Šios dirbtuvės suteikia unikalią galimybę ne tik paragauti, bet ir patiems išmokti gaminti autentiškus karaimų patiekalus. Kartu su patyrusiais virtuvės šefais dalyviai susipažįsta su tradiciniais receptais, gaminimo technologija ir kultūriniu paveldu. Tai puiki proga stiprinti ryšį tarp kartų, perduodant kulinarines paslaptis jaunimui."
+      },
+      "2": {
+        "title": "Žirgų Terapija",
+        "description": "Atraskite žirgų terapijos gydomąją galią ir sustiprinkite ryšį su gamta nuostabiajame Trakų krašte.",
+        "fullDescription": "Žirgų terapija yra patvirtintas metodas, padedantis gerinti emocinę ir fizinę sveikatą. Programos metu dalyviai mokosi bendrauti su žirgais, juos prižiūrėti ir jodinėti. Tai ne tik stiprina kūną, bet ir suteikia ramybės, mažina stresą bei padeda atrasti harmoniją su gamta Trakų nacionalinio parko apsuptyje."
+      },
+      "3": {
+        "title": "Lietuvos Totorių Kultūros Lobiai",
+        "description": "Pasinerkite į unikalų Lietuvos totorių bendruomenės kultūros paveldą per autentiškas veiklas ir susitikimus.",
+        "fullDescription": "Lietuvos totoriai – neatsiejama mūsų istorijos dalis. Šio projekto metu kviečiame susipažinti su jų papročiais, religija, menais ir kulinariniu paveldu. Organizuojami susitikimai su bendruomenės nariais, edukacinės išvykos ir kultūriniai renginiai, leidžiantys giliau pažinti šią unikalią etninę grupę."
+      },
+      "4": {
+        "title": "Gamtos Tyrinėjimas ir Sveikatingumo Veiklos",
+        "description": "Atraskite gamtos grožį per aktyvias veiklas, kurios stiprina fizinę ir psichikos sveikatą.",
+        "fullDescription": "Programa skirta tiems, kurie nori suderinti aktyvų laisvalaikį su sveikatingumu. Žygiai pėsčiomis, orientacinės varžybos ir mankštos gamtoje padeda atitrūkti nuo kasdienio triukšmo, stiprina imunitetą ir gerina nuotaiką. Veiklos pritaikytos įvairaus amžiaus grupėms."
+      },
+      "5": {
+        "title": "Amatinio Šokolado Dirbtuvės",
+        "description": "Kurkite sveikus šokolado skanumynus iš kokybiškai atrinktų ingredientų kartu su patyriais šokolado meistrais.",
+        "fullDescription": "Saldus, bet sveikas! Šiose kūrybinėse dirbtuvėse sužinosite viską apie šokolado gamybą – nuo pupelės iki plytelės. Naudodami tik aukščiausios kokybės ingredientus, mokysitės kurti rankų darbo saldumynus, kurie džiugins ne tik skoniu, bet ir natūralumu. Puiki veikla šeimoms ir draugų grupėms."
+      },
+      "6": {
+        "title": "Trakų Istorijos ir Gamtos Pažintis",
+        "description": "Sujunkite Trakų istorijos tyrinėjimą su aktyviu poilsiu gamtos aplinkoje ir vandens sportu.",
+        "fullDescription": "Trakai – tai ne tik pilis. Tai ežerų, salų ir turtingos istorijos kraštas. Ši programa kviečia pažinti Trakus kitaip – plaukiant baidarėmis ar irklentėmis, lankant mažiau žinomas istorines vietas ir klausantis gidų pasakojimų apie kunigaikščių laikus bei vietines legendas."
+      }
+    }
+  },
+  "contact": {
+    "title": "PASIRUOŠĘ PRISIJUNGTI?",
+    "subtitle": "Tapkite mūsų tarptautinio tinklo dalimi.",
+    "description": "Nesvarbu, ar nori dalyvauti sporto veiklose, dalyvauti projektuose ar padėti organizuoti renginius – lauksime tavo žinutės. Kartu galime sukurti dar daugiau galimybių!",
+    "name_label": "VARDAS PAVARDĖ",
+    "name_placeholder": "Vardenis Pavardenis",
+    "email_label": "EL. PAŠTAS",
+    "email_placeholder": "vardas@pavyzdys.lt",
+    "message_label": "ŽINUTĖ",
+    "message_placeholder": "Kaip galime jums padėti?",
+    "submit": "SIŲSTI",
+    "errors": {
+      "required": "Šis laukas yra privalomas",
+      "max_length": "Maksimalus ilgis {{count}} simbolių",
+      "invalid_email": "Neteisingas el. pašto adresas"
+    }
+  },
+  "footer": {
+    "description": "Kuriame tiltus tarp kartų per inovatyvias programas, kurios skatina sveiką gyvenimo būdą, kultūrinį bendravimą ir bendruomeniškumą.",
+    "links_title": "Nuorodos",
+    "contact_title": "Kontaktai",
+    "info_title": "Informacija",
+    "eu_funding": "Šį projektą finansuoja Europos Komisija. Ši svetainė atspindi tik autoriaus požiūrį, todėl Komisija negali būti laikoma atsakinga už bet kokį jame pateikiamos informacijos naudojimą.",
+    "privacy_policy": "Privatumo politika",
+    "terms_of_use": "Naudojimo taisyklės",
+    "privacy_modal_title": "Privatumo politika",
+    "privacy_modal_text1": "Gerbiame jūsų privatumą, todėl informuojame, kad šioje svetainėje <strong>nenaudojami slapukai</strong> (angl. cookies).",
+    "privacy_modal_text2": "Mes nerenkame, nekaupiame ir neanalizuojame jokių lankytojų srauto duomenų ar asmeninės informacijos naršymo metu. Jūsų apsilankymas yra visiškai anonimiškas.",
+    "rights_reserved": "Visos teisės saugomos.",
+    "made_with_love": "Sukurta su"
+  }
+}

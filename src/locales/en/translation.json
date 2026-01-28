@@ -1,0 +1,92 @@
+{
+  "header": {
+    "title": "International Projects",
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "CONNECTING GENERATIONS",
+    "description": "Strengthening communities through intergenerational dialogue, healthy habits, and sustainable living. Join our mission to create healthier and more connected communities.",
+    "cta": "Learn More"
+  },
+  "about": {
+    "title": "MORE THAN JUST PROJECTS",
+    "description": "The International Projects Association (TPA) connects different generations through innovative programs focused on healthy lifestyles, cultural exchange, and community strengthening. We believe in the power of shared wisdom and intergenerational collaboration.",
+    "impact_title": "HUNDREDS OF PEOPLE CREATING NEW CONNECTIONS",
+    "stat1_title": "Practical Skills Development",
+    "stat1_desc": "We create unique spaces where people of different generations can meet, share experiences, and learn from each other.",
+    "stat2_title": "Creative Learning",
+    "stat2_desc": "Practical learning through various activities - from sports competitions to traditional craft workshops.",
+    "stat3_title": "Community Strengthening",
+    "stat3_desc": "We connect young people with older community members, creating opportunities for mutual learning."
+  },
+  "initiatives": {
+    "title": "Our Projects",
+    "cta_read_more": "Learn More",
+    "items": {
+      "1": {
+        "title": "Traditional Cooking Workshops",
+        "description": "Learn the secrets of Karaite cuisine from experienced chefs and pass this knowledge on to the younger generation.",
+        "fullDescription": "These workshops provide a unique opportunity not only to taste but also to learn how to cook authentic Karaite dishes yourself. Together with experienced chefs, participants get acquainted with traditional recipes, cooking technology, and cultural heritage. This is a great opportunity to strengthen the bond between generations by passing on culinary secrets to the youth."
+      },
+      "2": {
+        "title": "Horse Therapy",
+        "description": "Discover the healing power of horse therapy and strengthen your connection with nature in the beautiful Trakai region.",
+        "fullDescription": "Horse therapy is a proven method for improving emotional and physical health. During the program, participants learn to interact with horses, care for them, and ride. This not only strengthens the body but also brings peace, reduces stress, and helps find harmony with nature in the surroundings of Trakai National Park."
+      },
+      "3": {
+        "title": "Treasures of Lithuanian Tatar Culture",
+        "description": "Immerse yourself in the unique cultural heritage of the Lithuanian Tatar community through authentic activities and meetings.",
+        "fullDescription": "Lithuanian Tatars are an integral part of our history. During this project, we invite you to get acquainted with their customs, religion, arts, and culinary heritage. Meetings with community members, educational trips, and cultural events are organized to deepen the understanding of this unique ethnic group."
+      },
+      "4": {
+        "title": "Nature Exploration and Wellness Activities",
+        "description": "Discover the beauty of nature through active activities that strengthen physical and mental health.",
+        "fullDescription": "The program is designed for those who want to combine active leisure with wellness. Hiking, orienteering, and outdoor exercises help escape daily noise, strengthen immunity, and improve mood. Activities are adapted for various age groups."
+      },
+      "5": {
+        "title": "Artisan Chocolate Workshops",
+        "description": "Create healthy chocolate treats from high-quality ingredients together with experienced chocolate masters.",
+        "fullDescription": "Sweet but healthy! In these creative workshops, you will learn everything about chocolate production – from bean to bar. Using only the highest quality ingredients, you will learn to create handmade sweets that will delight not only with taste but also with naturalness. A great activity for families and groups of friends."
+      },
+      "6": {
+        "title": "Exploring Trakai History and Nature",
+        "description": "Combine the exploration of Trakai history with active recreation in nature and water sports.",
+        "fullDescription": "Trakai is not just a castle. It is a land of lakes, islands, and rich history. This program invites you to get to know Trakai differently – by kayaking or paddleboarding, visiting lesser-known historical places, and listening to guides' stories about the times of dukes and local legends."
+      }
+    }
+  },
+  "contact": {
+    "title": "READY TO JOIN?",
+    "subtitle": "Become part of our international network.",
+    "description": "Whether you want to participate in sports activities, join projects, or help organize events – we look forward to your message. Together, we can create even more opportunities!",
+    "name_label": "FULL NAME",
+    "name_placeholder": "John Doe",
+    "email_label": "EMAIL",
+    "email_placeholder": "john@example.com",
+    "message_label": "MESSAGE",
+    "message_placeholder": "How can we help you?",
+    "submit": "SEND",
+    "errors": {
+      "required": "This field is required",
+      "max_length": "Max length is {{count}} characters",
+      "invalid_email": "Invalid email address"
+    }
+  },
+  "footer": {
+    "description": "Building bridges between generations through innovative programs that promote healthy lifestyles, cultural exchange, and community spirit.",
+    "links_title": "Links",
+    "contact_title": "Contacts",
+    "info_title": "Information",
+    "eu_funding": "This project is funded by the European Commission. This website reflects only the author's view, and the Commission cannot be held responsible for any use which may be made of the information contained therein.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_use": "Terms of Use",
+    "privacy_modal_title": "Privacy Policy",
+    "privacy_modal_text1": "We respect your privacy, therefore we inform you that this website <strong>does not use cookies</strong>.",
+    "privacy_modal_text2": "We do not collect, store, or analyze any visitor traffic data or personal information during browsing. Your visit is completely anonymous.",
+    "rights_reserved": "All rights reserved.",
+    "made_with_love": "Made with"
+  }
+}
