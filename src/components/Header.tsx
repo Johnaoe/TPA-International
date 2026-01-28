@@ -2,23 +2,37 @@ import React, { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import logo from '../assets/Logo.webp';
 import { useTranslation } from 'react-i18next';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'lt' ? 'en' : 'lt';
     i18n.changeLanguage(newLang);
   };
 
-  const scrollToSection = (id: string) => {
+  const handleNavigation = (id: string) => {
     setIsMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    } else if (id === 'top') {
+    
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
+    } else {
+      scrollToSection(id);
+    }
+  };
+
+  const scrollToSection = (id: string) => {
+    if (id === 'top') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -36,12 +50,12 @@ const Header: React.FC = () => {
         {/* Logo */}
         <div 
           className="flex items-center gap-3 cursor-pointer" 
-          onClick={() => scrollToSection('top')}
+          onClick={() => handleNavigation('top')}
         >
           <div className="flex items-center justify-center">
-            <img src={logo} alt="TPA Logo" className="w-auto h-20" />
+            <img src={logo} alt="TPA Logo" className="w-auto h-10 md:h-20" />
           </div>
-          <h1 className="text-lg font-bold tracking-tight text-gray-900 hidden xs:block">
+          <h1 className="text-lg font-bold tracking-tight text-gray-900 hidden lg:block">
             {t('header.title')}
           </h1>
         </div>
@@ -52,8 +66,8 @@ const Header: React.FC = () => {
             {navLinks.map((link) => (
               <button
                 key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className="text-gray-600 font-medium hover:text-primary transition-colors text-sm"
+                onClick={() => handleNavigation(link.id)}
+                className="text-gray-600 font-medium hover:text-primary transition-colors text-sm uppercase tracking-wide"
               >
                 {link.label}
               </button>
@@ -63,7 +77,7 @@ const Header: React.FC = () => {
           {/* Language Switcher */}
           <button 
             onClick={toggleLanguage}
-            className="flex items-center gap-1 text-gray-600 hover:text-primary transition-colors text-sm font-medium border border-gray-200 rounded-full px-3 py-1"
+            className="flex items-center gap-1 text-gray-600 hover:text-primary transition-colors text-sm font-medium border border-gray-200 rounded-full px-3 py-1 hover:border-primary"
           >
             <Globe className="w-4 h-4" />
             <span>{i18n.language.toUpperCase()}</span>
@@ -94,8 +108,8 @@ const Header: React.FC = () => {
           {navLinks.map((link) => (
             <button
               key={link.id}
-              onClick={() => scrollToSection(link.id)}
-              className="text-left py-2 px-4 rounded-lg hover:bg-gray-50 text-gray-700 font-medium transition-colors"
+              onClick={() => handleNavigation(link.id)}
+              className="text-left py-3 px-4 rounded-lg hover:bg-gray-50 text-gray-700 font-medium transition-colors border-b border-gray-50 last:border-0"
             >
               {link.label}
             </button>

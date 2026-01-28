@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative w-full">
       <div 
-        className="relative flex min-h-[500px] md:min-h-[600px] flex-col items-center justify-center gap-6 px-4 py-12 text-center bg-cover bg-center"
+        className="relative flex min-h-[400px] md:min-h-[600px] flex-col items-center justify-center gap-6 px-4 py-12 text-center bg-cover bg-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('${backgroundImage}')`
         }}

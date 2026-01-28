@@ -18,7 +18,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="w-full bg-soft-blue py-16 mt-8">
+    <section id="contact" className="w-full bg-soft-blue py-10 md:py-16 mt-8">
       <div className="px-4 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start">
           

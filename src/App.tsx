@@ -1,23 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Initiatives from './components/Initiatives';
-import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import ProjectDetails from './pages/ProjectDetails';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#f6f7f8] text-[#111418]">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Initiatives />
-        <ContactForm />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-[#f6f7f8] text-[#111418]">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects/:id" element={<ProjectDetails />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 

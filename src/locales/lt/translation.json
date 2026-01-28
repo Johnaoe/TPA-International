@@ -15,7 +15,7 @@
     "title": "DAUGIAU NEI TIK PROJEKTAI",
     "description": "Tarptautinių Projektų Asociacija (TPA) jungia skirtingas kartas per inovatyvias programas, orientuotas į sveiką gyvenimo būdą, kultūrinį bendravimą ir bendruomenės stiprinimą. Tikime dalijimosi išmintimi ir kartų bendradarbiavimo galia.",
     "impact_title": "ŠIMTAI ŽMONIŲ KURIA NAUJUS RYŠIUS",
-    "stat1_title": "Praktinių Įgūdžių Ugdymas",
+    "stat1_title": "PraktiniųĮgūdžių Ugdymas",
     "stat1_desc": "Kuriame unikalias erdves, kur skirtingų kartų žmonės gali susitikti, dalintis patirtimi ir kartu mokytis vieni iš kitų.",
     "stat2_title": "Kūrybinis Mokymasis",
     "stat2_desc": "Praktinis mokymasis per įvairias veiklas - nuo sporto varžybų iki tradicinių amatų dirbtuvių.",
@@ -58,6 +58,15 @@
       }
     }
   },
+  "gallery": {
+    "title": "Ankstesnių Projektų Galerija",
+    "items": {
+      "connessioni2025": {
+        "title": "Connessioni 2025 - Cagliari, Sardinia",
+        "description": "2025 m. spalio 19–23 d. Tarptautinių Projektų Asociacija kaip oficialus partneris dalyvavo „Connessioni 2025“ renginyje, vykusiame Kaljaryje, Sardinijoje. Renginį organizavo „TDM 2000 International“, jame dalyvavo daugiau nei 150 dalyvių iš visos Europos, o pagrindinis dėmesys buvo skiriamas darbui su jaunimu, savanorystei ir tarptautiniam bendradarbiavimui.\n\nKaip partnerinė organizacija, ICRP prisidėjo prie programos ir dalyvavo NVO mugėje, kurioje paskutinę dieną prisistatė daugiau nei 40 pilietinės visuomenės organizacijų. Ši platforma suteikė galimybę prasmingam dialogui, gerosios praktikos mainams ir naujų bendradarbiavimo galimybių paieškai jaunimo ir kultūrinių ryšių srityje.\n\nAntrą kartą dalyvaujant „Connessioni“ dar labiau sustiprėjo ICRP įsitraukimas į Europos tinklus ir įsipareigojimas plėtoti aukštos kokybės tarptautines partnerystes. Renginio metu užmegzti ryšiai ir diskusijos prisidės prie būsimų bendrų iniciatyvų ir padės kurti poveikį darančias veiklas šiame sektoriuje."
+      }
+    }
+  },
   "contact": {
     "title": "PASIRUOŠĘ PRISIJUNGTI?",
     "subtitle": "Tapkite mūsų tarptautinio tinklo dalimi.",
@@ -86,6 +95,8 @@
     "privacy_modal_title": "Privatumo politika",
     "privacy_modal_text1": "Gerbiame jūsų privatumą, todėl informuojame, kad šioje svetainėje <strong>nenaudojami slapukai</strong> (angl. cookies).",
     "privacy_modal_text2": "Mes nerenkame, nekaupiame ir neanalizuojame jokių lankytojų srauto duomenų ar asmeninės informacijos naršymo metu. Jūsų apsilankymas yra visiškai anonimiškas.",
+    "terms_modal_title": "Naudojimo taisyklės",
+    "terms_modal_text": "Lankydamiesi ir naudodamiesi šia svetaine, jūs sutinkate laikytis bendrųjų interneto naudojimo standartų ir gerbti autorių teises. Pateikiama informacija yra skirta informaciniams tikslams.",
     "rights_reserved": "Visos teisės saugomos.",
     "made_with_love": "Sukurta su"
   }

@@ -75,7 +75,7 @@ const Initiatives: React.FC = () => {
   };
 
   return (
-    <section id="initiatives" className="px-4 py-12 max-w-7xl mx-auto w-full">
+    <section id="initiatives" className="px-4 py-8 md:py-12 max-w-7xl mx-auto w-full">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">{t('initiatives.title')}</h2>
       </div>

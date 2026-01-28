@@ -3,16 +3,32 @@ import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import logo from '../assets/Logo.webp';
 import Modal from './Modal';
 import { useTranslation } from 'react-i18next';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (id: string) => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
+    } else {
+      scrollToSection(id);
+    }
+  };
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (id === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -45,22 +61,22 @@ const Footer: React.FC = () => {
             <h3 className="font-bold text-gray-900 mb-6 text-lg">{t('footer.links_title')}</h3>
             <ul className="flex flex-col gap-4 text-gray-600 text-sm font-medium">
               <li>
-                <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-primary hover:translate-x-1 transition-all duration-300 flex items-center gap-2">
+                <button onClick={() => handleNavigation('top')} className="hover:text-primary hover:translate-x-1 transition-all duration-300 flex items-center gap-2">
                   {t('header.home')}
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollToSection('about')} className="hover:text-primary hover:translate-x-1 transition-all duration-300 flex items-center gap-2">
+                <button onClick={() => handleNavigation('about')} className="hover:text-primary hover:translate-x-1 transition-all duration-300 flex items-center gap-2">
                   {t('header.about')}
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollToSection('initiatives')} className="hover:text-primary hover:translate-x-1 transition-all duration-300 flex items-center gap-2">
+                <button onClick={() => handleNavigation('initiatives')} className="hover:text-primary hover:translate-x-1 transition-all duration-300 flex items-center gap-2">
                   {t('header.projects')}
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollToSection('contact')} className="hover:text-primary hover:translate-x-1 transition-all duration-300 flex items-center gap-2">
+                <button onClick={() => handleNavigation('contact')} className="hover:text-primary hover:translate-x-1 transition-all duration-300 flex items-center gap-2">
                   {t('header.contact')}
                 </button>
               </li>
@@ -97,7 +113,12 @@ const Footer: React.FC = () => {
               >
                 {t('footer.privacy_policy')}
               </button>
-              <a href="#" className="hover:text-primary hover:underline decoration-2 underline-offset-4 transition-all">{t('footer.terms_of_use')}</a>
+              <button 
+                onClick={() => setIsTermsOpen(true)} 
+                className="text-left hover:text-primary hover:underline decoration-2 underline-offset-4 transition-all"
+              >
+                {t('footer.terms_of_use')}
+              </button>
             </div>
           </div>
 
@@ -118,6 +139,18 @@ const Footer: React.FC = () => {
           <p className="text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('footer.privacy_modal_text1') }} />
           <p className="text-gray-700 leading-relaxed">
             {t('footer.privacy_modal_text2')}
+          </p>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={isTermsOpen}
+        onClose={() => setIsTermsOpen(false)}
+        title={t('footer.terms_modal_title')}
+      >
+        <div className="flex flex-col gap-4">
+          <p className="text-gray-700 leading-relaxed">
+            {t('footer.terms_modal_text')}
           </p>
         </div>
       </Modal>

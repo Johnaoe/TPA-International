@@ -58,6 +58,15 @@
       }
     }
   },
+  "gallery": {
+    "title": "Previous Projects Gallery",
+    "items": {
+      "connessioni2025": {
+        "title": "Connessioni 2025 - Cagliari, Sardinia",
+        "description": "Between 19–23 October 2025, the Tarptautinių Projektų Asociacija participated as an official partner in Connessioni 2025, held in Cagliari, Sardinia. The event - organised by TDM 2000 International - brought together more than 150 participants from across Europe, focusing on youth work, volunteering, and international cooperation.\n\nAs a partner organisation, ICRP contributed to the programme and engaged in the NGO Fair, which hosted over 40 civil society organisations on the final day. This platform enabled meaningful dialogue, exchange of practices, and the exploration of new cooperation pathways in the field of youth and cultural relations.\n\nTaking part in Connessioni for the second time further strengthened ICRP’s involvement in European networks and reinforced its commitment to advancing high-quality international partnerships. The connections established and the discussions held during the event will support future collaborative initiatives and contribute to the development of impactful activities within the sector."
+      }
+    }
+  },
   "contact": {
     "title": "READY TO JOIN?",
     "subtitle": "Become part of our international network.",
@@ -86,6 +95,8 @@
     "privacy_modal_title": "Privacy Policy",
     "privacy_modal_text1": "We respect your privacy, therefore we inform you that this website <strong>does not use cookies</strong>.",
     "privacy_modal_text2": "We do not collect, store, or analyze any visitor traffic data or personal information during browsing. Your visit is completely anonymous.",
+    "terms_modal_title": "Terms of Use",
+    "terms_modal_text": "By accessing and using this website, you agree to comply with general internet usage standards and respect copyright laws. The content provided is for informational purposes only.",
     "rights_reserved": "All rights reserved.",
     "made_with_love": "Made with"
   }
