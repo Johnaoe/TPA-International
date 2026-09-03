@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Healthy Habits — Programme</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+:root{
+  --g:#2D5C3A;--gm:#4A7C59;--gl:#D4E9DB;--gll:#EBF4EE;
+  --be:#F5F0E8;--be2:#EDE6D6;
+  --br:#8B6F47;--brd:#5C4425;
+  --ac:#C9623F;
+  --tx:#2C2419;--txm:#5C4A32;--txl:#8B7355;
+  --wh:#FFFDF8;
+}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:'DM Sans',sans-serif;background:#D8D0C0;padding:0;color:var(--tx);}
+.wrap{max-width:600px;margin:0 auto;background:var(--wh);min-height:100vh;}
+@media(min-width:640px){body{padding:20px;} .wrap{border-radius:18px;overflow:hidden;min-height:0;}}
+
+.cover{background:var(--g);padding:28px 20px 24px;}
+.cover-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.8);font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:14px;}
+.cover h1{font-family:'DM Serif Display',serif;font-size:34px;color:#fff;line-height:1.05;margin-bottom:6px;}
+.cover h2{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,0.65);font-weight:400;margin-bottom:16px;}
+.cover-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.cover-chip{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:9px;padding:8px 12px;}
+.cover-chip-label{font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2px;}
+.cover-chip-val{font-size:12px;font-weight:500;color:#fff;}
+
+.body{padding:20px 16px 30px;}
+.sec-label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--txl);font-weight:600;margin-bottom:10px;padding-bottom:7px;border-bottom:1.5px solid var(--be2);}
+
+.today{background:var(--g);border-radius:14px;padding:18px 18px;color:#fff;margin-bottom:22px;}
+.today-eyebrow{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:6px;}
+.today-title{font-family:'DM Sans',sans-serif;font-weight:700;font-size:20px;margin-bottom:12px;line-height:1.2;}
+.today-grid{display:flex;flex-direction:column;gap:8px;}
+.today-box{background:rgba(255,255,255,0.1);border-radius:10px;padding:11px 13px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.today-box-lbl{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.55);}
+.today-box-val{font-size:13px;font-weight:500;line-height:1.4;text-align:right;}
+
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-bottom:20px;}
+.tab{background:var(--be);border:1.5px solid transparent;border-radius:9px;padding:8px 4px;font-size:12px;font-weight:700;color:var(--txm);cursor:pointer;transition:background .15s,color .15s;user-select:none;line-height:1.35;text-align:center;}
+.tab:active{background:var(--be2);}
+.tab.today-marker{background:var(--gl);color:var(--brd);}
+.tab.active{background:var(--g);color:#fff;}
+.tab .l2{display:block;font-size:9.5px;font-weight:500;opacity:.8;}
+
+.day-panel{display:none;}
+.day-panel.active{display:block;}
+.day-heading{font-family:'DM Sans',sans-serif;font-weight:700;font-size:19px;color:var(--g);margin-bottom:3px;line-height:1.25;}
+.day-sub{font-size:11px;color:var(--txl);margin-bottom:14px;}
+
+.trains{background:var(--be);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+.trains-lbl{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--txl);font-weight:600;margin-bottom:6px;}
+.train-row{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--be2);font-size:12px;}
+.train-row:last-child{border-bottom:none;}
+.train-route{color:var(--txl);font-size:10px;}
+
+.toggle-btn{width:100%;background:var(--be);border:none;border-radius:10px;padding:12px 14px;font-size:12px;font-weight:600;color:var(--txm);display:flex;justify-content:space-between;align-items:center;cursor:pointer;margin-bottom:2px;}
+.toggle-btn .chev{transition:transform .2s;font-size:11px;}
+.toggle-btn.open .chev{transform:rotate(180deg);}
+.schedule-wrap{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.schedule-wrap.open{max-height:3000px;}
+
+.timeline{display:flex;flex-direction:column;padding-top:12px;}
+.trow{display:flex;flex-direction:column;gap:2px;padding:11px 0;border-bottom:1px solid var(--be2);}
+.trow:last-child{border-bottom:none;}
+.ttime{font-size:11px;font-weight:700;color:var(--g);letter-spacing:.3px;}
+.ttext{font-size:13px;color:var(--tx);line-height:1.5;}
+.ttext .note{font-size:11px;color:var(--txl);font-style:italic;}
+
+.summary-row{display:flex;flex-direction:column;gap:8px;margin-top:16px;}
+.summary-chip{background:var(--gl);border-radius:10px;padding:11px 13px;}
+.summary-chip.muted{background:var(--be);}
+.summary-chip-top{display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer;}
+.summary-chip .lbl{font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--brd);font-weight:700;display:flex;align-items:center;gap:6px;white-space:nowrap;}
+.summary-chip.muted .lbl{color:var(--txl);}
+.summary-chip .val{font-size:12.5px;font-weight:500;color:var(--tx);text-align:right;}
+.summary-chip .ic{font-size:14px;}
+.summary-chip .info-ic{font-size:11px;color:var(--brd);opacity:.55;font-weight:700;margin-left:2px;}
+.summary-chip.muted .info-ic{color:var(--txl);}
+.chip-note{max-height:0;overflow:hidden;transition:max-height .2s ease;}
+.chip-note.open{max-height:200px;margin-top:8px;}
+.chip-note p{font-size:11px;color:var(--brd);line-height:1.5;opacity:.85;}
+.summary-chip.muted .chip-note p{color:var(--txl);opacity:1;}
+
+.final{background:var(--g);padding:24px 20px;text-align:center;}
+.final h3{font-family:'DM Sans',sans-serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:6px;}
+.final p{font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:14px;}
+.final-sub{font-size:10px;color:rgba(255,255,255,0.5);}
+
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+.card{background:var(--be);border-radius:12px;padding:18px;}
+.card-mid{background:var(--gl);border-radius:12px;padding:18px;}
+.rule-row{display:flex;gap:10px;align-items:flex-start;padding:11px 14px;border-radius:8px;margin-bottom:8px;}
+.rule-row:last-child{margin-bottom:0;}
+.rule-row.r1{background:var(--be);border-left:3px solid var(--br);}
+.rule-row.r2{background:#FFF3E0;border-left:3px solid #E8A04A;}
+.rule-row.r3{background:#FEF2F2;border-left:3px solid var(--ac);}
+.rule-ic{font-size:15px;flex-shrink:0;margin-top:1px;}
+.rule-t{font-weight:600;font-size:12px;color:var(--tx);}
+.rule-s{font-size:11px;color:var(--txl);line-height:1.45;}
+.grant-row{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid var(--be2);}
+.grant-row:last-child{border-bottom:none;}
+.grant-c{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;color:var(--tx);}
+.grant-f{font-size:20px;}
+.grant-a{font-family:'DM Serif Display',serif;font-size:20px;color:var(--g);}
+.grant-row.host .grant-a{color:var(--txl);}
+.phrase-card{background:var(--be);border-radius:10px;padding:16px;}
+.pl{font-family:'DM Serif Display',serif;font-size:24px;color:var(--g);}
+.pe{font-size:12px;color:var(--txl);font-weight:500;margin-top:2px;}
+.pp{font-size:10px;color:var(--txl);font-style:italic;margin-top:2px;}
+.pack-item{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--be2);font-size:12px;color:var(--tx);}
+.pack-item:last-child{border-bottom:none;}
+.pack-ic{font-size:14px;}
+.info-wrap{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 4px;}
+.info-wrap.open{max-height:5000px;padding:16px 4px;}
+@media (max-width: 639px) {
+  .row2 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="cover-badge">Erasmus+ Youth Exchange</div>
+    <h1>Healthy Habits</h1>
+    <h2>Programme &amp; kitchen duty tracker</h2>
+    <div class="cover-chips">
+      <div class="cover-chip"><div class="cover-chip-label">Dates</div><div class="cover-chip-val">8–17 Sept 2026</div></div>
+      <div class="cover-chip"><div class="cover-chip-label">Location</div><div class="cover-chip-val">Trakai, Lithuania 🇱🇹</div></div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div id="todayHero" class="today"></div>
+
+    <div class="sec-label">Programme by day</div>
+    <div class="tabs" id="tabs"></div>
+    <div id="panels"></div>
+
+    <div class="sec-label" style="margin-top: 32px;">Practical Information</div>
+    <button class="toggle-btn" id="toggle-info"><span>Show practical information</span><span class="chev">▾</span></button>
+    <div class="info-wrap" id="wrap-info">
+      
+      <!-- Rules & Safety + What to prepare -->
+      <div class="row2">
+        <div>
+          <div class="sec-label">Rules & safety</div>
+          <div class="rule-row r1"><div class="rule-ic">✅</div><div><div class="rule-t">Active participation required</div><div class="rule-s">Join all activities throughout the exchange.</div></div></div>
+          <div class="rule-row r1"><div class="rule-ic">🏥</div><div><div class="rule-t">Health insurance is mandatory</div><div class="rule-s">Valid travel insurance for the full stay.</div></div></div>
+          <div class="rule-row r2"><div class="rule-ic">🚭</div><div><div class="rule-t">No smoking indoors</div><div class="rule-s">Only in designated outdoor areas.</div></div></div>
+          <div class="rule-row r2"><div class="rule-ic">🍺</div><div><div class="rule-t">No alcohol during activities</div><div class="rule-s">Not allowed during programme sessions.</div></div></div>
+          <div class="rule-row r1"><div class="rule-ic">📞</div><div><div class="rule-t">Emergency contacts on-site</div><div class="rule-s">First aid info available at all times.</div></div></div>
+        </div>
+        <div>
+          <div class="sec-label">What to prepare</div>
+          <div class="row2" style="margin-bottom:0;gap:14px;">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--txl);margin-bottom:8px;">Documents</div>
+              <div class="pack-item"><div class="pack-ic">🛂</div> Passport or ID card</div>
+              <div class="pack-item"><div class="pack-ic">🏥</div> Health insurance card</div>
+              <div class="pack-item"><div class="pack-ic">✈️</div> Travel tickets & bookings</div>
+              <div class="pack-item"><div class="pack-ic">📱</div> Emergency contacts</div>
+            </div>
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--txl);margin-bottom:8px;">Clothing & items</div>
+              <div class="pack-item"><div class="pack-ic">👟</div> Comfortable shoes & clothes</div>
+              <div class="pack-item"><div class="pack-ic">🩱</div> Swimsuit</div>
+              <div class="pack-item"><div class="pack-ic">🚿</div> Towels</div>
+              <div class="pack-item"><div class="pack-ic">🧴</div> Personal toiletries</div>
+              <div class="pack-item"><div class="pack-ic">💊</div> Personal medication</div>
+            </div>
+          </div>
+          <div style="margin-top:12px;background:var(--gl);border-radius:9px;padding:12px 14px;border-left:3px solid var(--g);">
+            <div style="font-size:12px;font-weight:600;color:var(--brd);margin-bottom:3px;">🌍 Bring something from your culture</div>
+            <div style="font-size:11px;color:var(--brd);line-height:1.5;">A small food item or cultural object to share with new friends.</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Travel Info & Phrases -->
+      <div class="row2">
+        <div>
+          <div class="sec-label">Travel information</div>
+          <div class="rule-row r1"><div class="rule-ic">💳</div><div><div class="rule-t">Travel costs are reimbursed</div><div class="rule-s">You pay upfront, we reimburse after the project.</div></div></div>
+          <div class="rule-row r1"><div class="rule-ic">🧾</div><div><div class="rule-t">Keep all your tickets</div><div class="rule-s">Provide original tickets & boarding passes.</div></div></div>
+          <div class="rule-row r1"><div class="rule-ic">⏱️</div><div><div class="rule-t">Reimbursement in ~60 days</div><div class="rule-s">After the project ends.</div></div></div>
+          <div class="rule-row r1"><div class="rule-ic">📆</div><div><div class="rule-t">Max 2 extra travel days covered</div><div class="rule-s">Days beyond this are self-funded.</div></div></div>
+          <div class="rule-row r3"><div class="rule-ic">⚠️</div><div><div class="rule-t">Visa costs are NOT covered</div><div class="rule-s">Check your requirements early.</div></div></div>
+        </div>
+        <div>
+          <div class="sec-label">Useful Lithuanian phrases</div>
+          <div class="row2" style="gap:10px;margin-bottom:0;">
+            <div class="phrase-card"><div class="pl">Labas</div><div class="pe">Hello</div><div class="pp">"LAH-bahs"</div></div>
+            <div class="phrase-card"><div class="pl">Ačiū</div><div class="pe">Thank you</div><div class="pp">"AH-choo"</div></div>
+            <div class="phrase-card"><div class="pl">Prašau</div><div class="pe">Please / You're welcome</div><div class="pp">"pra-SHOW"</div></div>
+            <div class="phrase-card"><div class="pl">Viso gero</div><div class="pe">Goodbye</div><div class="pp">"VEE-so GEH-ro"</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="row2">
+        <div style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="sec-label">Contact Information</div>
+          <div class="card" style="padding:14px; margin-bottom: 12px;">
+            <div style="font-size:11px;font-weight:600;color:var(--txl);margin-bottom:6px;">Programme contact</div>
+            <div style="font-size:13px;font-weight:500;color:var(--g);">+370 630 03400</div>
+            <div style="font-size:13px;font-weight:500;color:var(--g);">info@tarptautiniaiprojektai.lt</div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+      
+    </div>
+
+  </div>
+
+  <div class="final">
+    <h3>🌿 Have a great time together!</h3>
+    <p>If anything is unclear, ask your group leader.</p>
+    <div class="final-sub">Healthy Habits · Youth Exchange · Trakai, Lithuania · September 2026</div>
+  </div>
+
+</div>
+
+<script>
+const TRAINS = [
+  ["09:25","09:59"], ["11:36","12:10"], ["13:17","13:51"], ["15:08","15:42"],
+  ["16:24","16:58"], ["17:40","18:14"], ["19:25","19:59"],
+];
+
+const DAYS = [
+  {
+    d: 1, date: "2026-09-08", wd: "Tue", disp: "Sept 8", title: "Arrival Day",
+    trains: TRAINS,
+    schedule: [
+      ["18:00–19:00", "<b>Dinner</b>"],
+      ["Evening", "Settle in"],
+    ],
+    kitchen: null, coffee: null, cultural: null,
+  },
+  {
+    d: 2, date: "2026-09-09", wd: "Wed", disp: "Sept 9", title: "Getting to Know Each Other",
+    schedule: [
+      ["8:30–9:30", "<b>Breakfast</b>"],
+      ["9:30–11:00", "Icebreakers &amp; personal sharing"],
+      ["11:00–11:30", "Coffee break"],
+      ["11:30–12:00", "Group guidelines, safety briefing &amp; expectations"],
+      ["12:00–12:30", "Habit Lab — how habits are formed"],
+      ["12:30–14:00", "<b>Lunch</b>"],
+      ["14:00–17:00", "Icebreakers &amp; sports activities"],
+      ["17:00–17:30", "Ask the Cardiologist"],
+      ["17:30–18:00", "Tea break"],
+      ["18:00–19:00", "<b>Dinner</b>"],
+      ["19:00–19:15", "Reflection &amp; Feedback"],
+      ["Evening", "Sauna"],
+    ],
+    kitchen: ["🇱🇹 Lithuania","🇳🇴 Norway","🇹🇷 Türkiye"], coffee: null, cultural: null,
+  },
+  {
+    d: 3, date: "2026-09-10", wd: "Thu", disp: "Sept 10", title: "Healthy Movement &amp; Sports",
+    schedule: [
+      ["8:30–9:30", "<b>Breakfast</b>"],
+      ["9:30–11:00", "Energizer — speed-dating style walk &amp; talk"],
+      ["11:00–11:30", "Coffee break — 🇱🇹 Lithuania"],
+      ["11:30–12:30", "Healthy Movement &amp; Sports"],
+      ["12:30–14:00", "<b>Lunch</b>"],
+      ["14:00–17:30", "Outdoor Sports — mini volleyball tournament &amp; other activities"],
+      ["17:30–18:00", "Tea break — 🇱🇹 Lithuania"],
+      ["18:00–19:00", "<b>Dinner</b>"],
+      ["19:00–19:15", "Reflection &amp; Feedback"],
+      ["Evening", "Cultural night — 🇳🇴 Norway &amp; 🇹🇷 Türkiye"],
+    ],
+    kitchen: ["🇷🇸 Serbia","🇨🇿 Czechia","🇱🇹 Lithuania"], coffee: "🇱🇹 Lithuania", cultural: "🇳🇴 Norway &amp; 🇹🇷 Türkiye",
+  },
+  {
+    d: 4, date: "2026-09-11", wd: "Fri", disp: "Sept 11", title: "Nutrition &amp; Active Living",
+    schedule: [
+      ["8:30–9:30", "<b>Breakfast</b>"],
+      ["9:30–11:00", "Energizers"],
+      ["11:00–11:30", "Coffee break — 🇳🇴 Norway"],
+      ["11:30–12:30", "Nutrition &amp; Active Living"],
+      ["12:30–14:00", "<b>Lunch</b>"],
+      ["14:00–17:30", "Workshop: Design Your Healthy Menu"],
+      ["17:30–18:00", "Tea break — 🇳🇴 Norway"],
+      ["18:00–19:00", "<b>Dinner</b>"],
+      ["19:00–19:15", "Reflection &amp; Feedback"],
+      ["Evening", "Cultural night — 🇱🇹 Lithuania &amp; 🇨🇿 Czechia"],
+    ],
+    kitchen: ["🇳🇴 Norway","🇹🇷 Türkiye","🇷🇸 Serbia"], coffee: "🇳🇴 Norway", cultural: "🇱🇹 Lithuania &amp; 🇨🇿 Czechia",
+  },
+  {
+    d: 5, date: "2026-09-12", wd: "Sat", disp: "Sept 12", title: "Wellbeing &amp; Managing Stress",
+    schedule: [
+      ["8:30–9:30", "<b>Breakfast</b>"],
+      ["9:30–11:00", "Morning Walk &amp; Breathing Exercise"],
+      ["11:00–11:30", "Coffee break — 🇷🇸 Serbia"],
+      ["12:00–12:30", "Stress &amp; Resilience"],
+      ["12:30–14:00", "<b>Lunch</b>"],
+      ["14:00–15:30", "Group work: recognising stress, creative presentation"],
+      ["15:30–17:30", "Quiet Time — journaling &amp; nature walk"],
+      ["17:30–18:00", "Tea break — 🇷🇸 Serbia"],
+      ["18:00–19:00", "<b>Dinner</b>"],
+      ["19:00–19:15", "Reflection &amp; Feedback"],
+      ["Evening", "Cultural night — 🇷🇸 Serbia"],
+    ],
+    kitchen: ["🇨🇿 Czechia","🇱🇹 Lithuania","🇳🇴 Norway"], coffee: "🇷🇸 Serbia", cultural: "🇷🇸 Serbia",
+  },
+  {
+    d: 6, date: "2026-09-13", wd: "Sun", disp: "Sept 13", title: "Sleep &amp; Digital Detox",
+    schedule: [
+      ["8:30–9:30", "<b>Breakfast</b>"],
+      ["9:30–11:00", "Sleep, Screens &amp; Social Media"],
+      ["11:00–11:30", "Coffee break — 🇨🇿 Czechia presents"],
+      ["11:30–12:30", "Wellbeing Apps Workshop — pitch your own app idea or find free alternatives (habit trackers, meditation, wellbeing apps), then share with the group"],
+      ["12:30–14:00", "<b>Lunch</b>"],
+      ["14:00–17:30", "Meditation &amp; Mindfulness Session"],
+      ["17:30–18:00", "Tea break"],
+      ["18:00–19:00", "<b>Dinner</b>"],
+      ["19:00–19:15", "Reflection &amp; Feedback"],
+      ["Evening", "Digital Detox Evening + Sauna"],
+    ],
+    kitchen: ["🇹🇷 Türkiye","🇷🇸 Serbia","🇨🇿 Czechia"], coffee: "🇨🇿 Czechia", cultural: null,
+  },
+  {
+    d: 7, date: "2026-09-14", wd: "Mon", disp: "Sept 14", title: "Movement in Everyday Life",
+    schedule: [
+      ["8:30–9:30", "<b>Breakfast</b>"],
+      ["9:30–11:00", "Organisation presentation <span class='note'>(tentative)</span>"],
+      ["11:00–11:30", "Coffee break — 🇹🇷 Türkiye"],
+      ["11:30–12:30", "Guided Stretching Session"],
+      ["12:30–14:00", "<b>Lunch</b>"],
+      ["14:00–17:30", "Movement Games &amp; Outdoor Play"],
+      ["17:30–18:00", "Tea break — 🇹🇷 Türkiye"],
+      ["18:00–19:00", "<b>Dinner</b>"],
+      ["19:00–19:15", "Reflection &amp; Feedback"],
+      ["Evening", "Sauna"],
+    ],
+    kitchen: ["🇱🇹 Lithuania","🇳🇴 Norway","🇹🇷 Türkiye"], coffee: "🇹🇷 Türkiye", cultural: null,
+  },
+  {
+    d: 8, date: "2026-09-15", wd: "Tue", disp: "Sept 15", title: "Local Discovery Day",
+    schedule: [
+      ["8:30–9:30", "<b>Breakfast</b>"],
+      ["Morning", "Local excursion / visit"],
+      ["12:30–14:00", "<b>Lunch</b>"],
+      ["14:00–17:30", "Kahoot"],
+      ["17:30–18:00", "Tea break"],
+      ["18:00–19:00", "<b>Dinner</b>"],
+      ["19:00–19:15", "Reflection &amp; Feedback"],
+      ["Evening", "Sauna"],
+    ],
+    kitchen: ["🇷🇸 Serbia","🇨🇿 Czechia","🇱🇹 Lithuania"], coffee: null, cultural: null,
+  },
+  {
+    d: 9, date: "2026-09-16", wd: "Wed", disp: "Sept 16", title: "Closing Preparations",
+    schedule: [
+      ["8:30–9:30", "<b>Breakfast</b>"],
+      ["9:30–11:00", "Dissemination planning — how will you share what you learned?"],
+      ["11:00–11:30", "Coffee break"],
+      ["11:30–12:30", "Preparing project outputs &amp; presentations"],
+      ["12:30–14:00", "<b>Lunch</b>"],
+      ["14:00–16:00", "Finalising habit trackers &amp; personal reflections"],
+      ["16:00–17:30", "Summary &amp; Youthpass Ceremony (Evaluation)"],
+      ["17:30–18:00", "Tea break"],
+      ["18:00–19:00", "<b>Dinner</b>"],
+      ["19:00–19:15", "Reflection &amp; Feedback"],
+      ["Evening", "Sauna"],
+    ],
+    kitchen: ["🇳🇴 Norway","🇹🇷 Türkiye","🇷🇸 Serbia"], coffee: null, cultural: null,
+  },
+  {
+    d: 10, date: "2026-09-17", wd: "Thu", disp: "Sept 17", title: "Departure",
+    schedule: [
+      ["8:30–9:30", "<b>Breakfast</b>"],
+      ["Morning", "Farewells &amp; departure"],
+    ],
+    kitchen: null, coffee: null, cultural: null,
+  },
+];
+
+const VOLUNTEER_NOTE = "Volunteers needed to help serve &amp; clear the table";
+
+const CHIP_INFO = {
+  kitchen: "One representative from each listed country helps serve and clear the table after meals. Each country's group decides internally who goes that day.",
+  kitchenVolunteer: "No fixed team today — anyone is welcome to pitch in with serving or clearing up.",
+  coffee: "The presenting country shares a short (10–15 min) story from home — a health or wellbeing tradition, a dish, or something meaningful to them.",
+  cultural: "The hosting countries put together a short evening for everyone — food, music, traditions or activities from home.",
+};
+
+function chipHtml(type, icon, label, value, muted) {
+  const note = type === 'kitchen' ? (muted ? CHIP_INFO.kitchenVolunteer : CHIP_INFO.kitchen)
+             : type === 'coffee' ? CHIP_INFO.coffee
+             : CHIP_INFO.cultural;
+  return '<div class="summary-chip' + (muted ? ' muted' : '') + '">' +
+    '<div class="summary-chip-top" data-toggle>' +
+      '<div class="lbl"><span class="ic">' + icon + '</span>' + label + '<span class="info-ic">ⓘ</span></div>' +
+      '<div class="val">' + value + '</div>' +
+    '</div>' +
+    '<div class="chip-note"><p>' + note + '</p></div>' +
+  '</div>';
+}
+
+const todayStr = new Date().toISOString().slice(0,10);
+let todayIndex = DAYS.findIndex(d => d.date === todayStr);
+let activeIndex = todayIndex >= 0 ? todayIndex : 0;
+
+const tabsEl = document.getElementById('tabs');
+const panelsEl = document.getElementById('panels');
+
+DAYS.forEach((day, i) => {
+  const tab = document.createElement('div');
+  tab.className = 'tab' + (i === activeIndex ? ' active' : '') + (i === todayIndex ? ' today-marker' : '');
+  tab.innerHTML = 'Day ' + day.d + '<span class="l2">' + day.disp + '</span>';
+  tab.onclick = () => setActive(i);
+  tabsEl.appendChild(tab);
+
+  const panel = document.createElement('div');
+  panel.className = 'day-panel' + (i === activeIndex ? ' active' : '');
+  panel.id = 'panel-' + i;
+
+  let html = '<div class="day-heading">Day ' + day.d + ' (' + day.wd + ') — ' + day.title + '</div>';
+  html += '<div class="day-sub">' + day.disp + ', 2026</div>';
+
+  if (day.trains) {
+    html += '<div class="trains"><div class="trains-lbl">Trains from Vilnius to Trakai</div>';
+    day.trains.forEach(([dep, arr]) => {
+      html += '<div class="train-row"><span>Vilnius ' + dep + ' → Trakai ' + arr + '</span><span class="train-route">Vilnius–Trakai</span></div>';
+    });
+    html += '</div>';
+  }
+
+  html += '<button class="toggle-btn open" id="toggle-' + i + '"><span>Hide full schedule</span><span class="chev">▾</span></button>';
+  html += '<div class="schedule-wrap open" id="wrap-' + i + '"><div class="timeline">';
+  day.schedule.forEach(([t, txt]) => {
+    html += '<div class="trow"><div class="ttime">' + t + '</div><div class="ttext">' + txt + '</div></div>';
+  });
+  html += '</div></div>';
+
+  html += '<div class="summary-row">';
+  html += chipHtml('kitchen', '🍽️', 'Kitchen duty', day.kitchen ? day.kitchen.join(' · ') : VOLUNTEER_NOTE, !day.kitchen);
+  if (day.coffee) {
+    html += chipHtml('coffee', '☕', 'Coffee break', day.coffee, false);
+  }
+  if (day.cultural) {
+    html += chipHtml('cultural', '🌍', 'Cultural night', day.cultural, false);
+  }
+  html += '</div>';
+
+  panel.innerHTML = html;
+  panelsEl.appendChild(panel);
+
+  const btn = panel.querySelector('#toggle-' + i);
+  const wrap = panel.querySelector('#wrap-' + i);
+  btn.addEventListener('click', () => {
+    const open = wrap.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.querySelector('span').textContent = open ? 'Hide full schedule' : 'Show full schedule';
+  });
+
+  panel.querySelectorAll('[data-toggle]').forEach(top => {
+    top.addEventListener('click', () => {
+      const note = top.parentElement.querySelector('.chip-note');
+      note.classList.toggle('open');
+    });
+  });
+});
+
+function setActive(i) {
+  activeIndex = i;
+  document.querySelectorAll('.tab').forEach((t, idx) => t.classList.toggle('active', idx === i));
+  document.querySelectorAll('.day-panel').forEach((p, idx) => p.classList.toggle('active', idx === i));
+}
+
+const heroEl = document.getElementById('todayHero');
+if (todayIndex >= 0) {
+  const d = DAYS[todayIndex];
+  let dutyText = d.kitchen ? d.kitchen.join(' · ') : VOLUNTEER_NOTE;
+  heroEl.innerHTML =
+    '<div class="today-eyebrow">Today · Day ' + d.d + '</div>' +
+    '<div class="today-title">' + d.title + '</div>' +
+    '<div class="today-grid">' +
+      '<div class="today-box"><div class="today-box-lbl">Kitchen duty</div><div class="today-box-val">' + dutyText + '</div></div>' +
+      (d.coffee ? '<div class="today-box"><div class="today-box-lbl">Coffee break</div><div class="today-box-val">' + d.coffee + '</div></div>' : '') +
+      (d.cultural ? '<div class="today-box"><div class="today-box-lbl">Cultural night</div><div class="today-box-val">' + d.cultural + '</div></div>' : '') +
+    '</div>';
+} else {
+  heroEl.innerHTML =
+    '<div class="today-eyebrow">Programme</div>' +
+    '<div class="today-title">8–17 September 2026</div>' +
+    '<div style="font-size:12px;color:rgba(255,255,255,0.75);">Pick a day below to see that day\'s schedule.</div>';
+}
+
+const infoBtn = document.getElementById('toggle-info');
+const infoWrap = document.getElementById('wrap-info');
+if (infoBtn && infoWrap) {
+  infoBtn.addEventListener('click', () => {
+    const open = infoWrap.classList.toggle('open');
+    infoBtn.classList.toggle('open', open);
+    infoBtn.querySelector('span').textContent = open ? 'Hide practical information' : 'Show practical information';
+  });
+}
+</script>
+</body>
+</html>
