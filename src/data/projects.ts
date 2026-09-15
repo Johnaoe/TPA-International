@@ -28,6 +28,6 @@ export const projects: Project[] = [
   },
   {
     id: 'healthyHabits2026',
-    images: [gallery17, gallery8, gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery7, gallery19]
+    images: [gallery7, gallery8, gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery15, gallery16]
   }
 ];
