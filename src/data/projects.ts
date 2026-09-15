@@ -13,8 +13,7 @@ import gallery11 from '../assets/gallery-11.webp';
 import gallery12 from '../assets/gallery-12.webp';
 import gallery13 from '../assets/gallery-13.webp';
 import gallery14 from '../assets/gallery-14.webp';
-import gallery17 from '../assets/gallery-17.webp';
-import gallery19 from '../assets/gallery-19.webp';
+import gallery15 from '../assets/gallery-15.webp';
 
 export interface Project {
   id: string;
@@ -28,6 +27,6 @@ export const projects: Project[] = [
   },
   {
     id: 'healthyHabits2026',
-    images: [gallery7, gallery8, gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery15, gallery16]
+    images: [gallery7, gallery8, gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery15]
   }
 ];
